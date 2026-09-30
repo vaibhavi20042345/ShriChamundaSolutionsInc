@@ -29,6 +29,13 @@
               <p>Carpentry & Business Services</p>
             </div>
           </div>
+          <div class="info-item">
+            <span>💼</span>
+            <div>
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/company/shri-chamunda-solutions-inc/" target="_blank" rel="noopener">Shri Chamunda Solutions Inc.</a>
+            </div>
+          </div>
         </div>
         <form class="contact-form" @submit.prevent="handleSubmit">
           <div class="form-group">

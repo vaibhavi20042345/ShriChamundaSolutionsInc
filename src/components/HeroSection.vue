@@ -8,7 +8,7 @@ const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ b
     <div class="hero-content">
       <img src="/logo.png" alt="Shri Chamunda Solutions Inc." class="hero-logo" />
       <h1>Expert Carpentry.<br><span>Built to Last.</span></h1>
-      <p>Professional residential carpentry, installation, and finishing services across Canada — crafted with precision, care, and quality.</p>
+      <p>Creating Better Solutions, Building Stronger Futures.</p>
       <div class="hero-btns">
         <button class="btn-primary" @click="scrollTo('services')">Our Services</button>
         <button class="btn-outline" @click="scrollTo('contact')">Get a Quote</button>
