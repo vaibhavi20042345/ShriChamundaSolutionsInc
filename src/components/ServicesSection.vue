@@ -157,8 +157,8 @@ h2 {
   border-color: #c8860a;
   background: rgba(200,134,10,0.1);
 }
-.check { font-size: 1.8rem; flex-shrink: 0; display: flex; align-items: center; }
-.icon-img { width: 1.8rem; height: 1.8rem; object-fit: contain; }
+.check { font-size: 1.8rem; flex-shrink: 0; display: flex; align-items: center; width: 1.8rem; height: 1.8rem; }
+.icon-img { width: 29px; height: 29px; object-fit: contain; display: block; }
 .service-card p {
   font-family: 'Open Sans', sans-serif;
   color: #e8d8c0;
