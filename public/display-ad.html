@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shri Chamunda Solutions — Display Ad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* 16:9 billboard canvas */
+    .billboard {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      overflow: hidden;
+      background: #1a0e05;
+    }
+
+    /* Background wood texture overlay */
+    .bg-img {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(15, 7, 2, 0.78), rgba(15, 7, 2, 0.78)),
+        url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1600&q=80') center/cover no-repeat;
+    }
+
+    /* Gold accent bar - left side */
+    .accent-left {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 10px;
+      background: linear-gradient(180deg, #c8860a, #f0b429, #c8860a);
+    }
+
+    /* Gold accent bar - top */
+    .accent-top {
+      position: absolute;
+      top: 0; left: 10px; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #c8860a, #f0b429, #c8860a);
+    }
+
+    /* Gold accent bar - bottom */
+    .accent-bottom {
+      position: absolute;
+      bottom: 0; left: 10px; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #c8860a, #f0b429, #c8860a);
+    }
+
+    /* Main layout */
+    .content {
+      position: absolute;
+      inset: 6px 0 6px 10px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 0;
+    }
+
+    /* LEFT PANEL */
+    .left {
+      padding: 40px 40px 40px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(200,134,10,0.3);
+    }
+
+    .logo-wrap {
+      display: inline-block;
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      padding: 10px 20px;
+      width: fit-content;
+      margin-bottom: 24px;
+    }
+    .logo-wrap img { height: 70px; display: block; }
+
+    .main-headline {
+      font-size: 58px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .main-headline span {
+      color: #c8860a;
+      display: block;
+    }
+
+    .tagline {
+      font-size: 16px;
+      font-weight: 600;
+      color: #c8b090;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .badge {
+      background: rgba(200,134,10,0.18);
+      border: 1.5px solid #c8860a;
+      color: #f0c060;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+
+    .cta-block {
+      background: linear-gradient(135deg, #c8860a, #a86e08);
+      border-radius: 12px;
+      padding: 20px 28px;
+    }
+    .cta-block p {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .cta-block .phone {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 1px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .cta-block .website {
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 1px;
+    }
+
+    /* RIGHT PANEL */
+    .right {
+      padding: 36px 44px 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(200,134,10,0.2);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .service-item .icon { font-size: 20px; flex-shrink: 0; }
+    .service-item span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e8d8c0;
+      line-height: 1.3;
+    }
+
+    /* Custom furniture strip */
+    .custom-strip {
+      background: rgba(200,134,10,0.12);
+      border: 1.5px solid rgba(200,134,10,0.4);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .custom-strip h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #c8860a;
+      margin-bottom: 6px;
+    }
+    .custom-strip p {
+      font-size: 12px;
+      color: #c8b090;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .custom-tags {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+    .custom-tag {
+      background: #c8860a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+    .idea-box {
+      background: #c8860a;
+      border-radius: 10px;
+      padding: 14px 20px;
+      text-align: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 1.8;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .idea-box .arrow { font-size: 22px; display: block; }
+
+    /* Animated pulse on phone */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.75; }
+    }
+    .cta-block .phone { animation: pulse 2s ease-in-out infinite; }
+
+    /* Scrolling ticker at very bottom */
+    .ticker-wrap {
+      position: absolute;
+      bottom: 6px;
+      left: 10px; right: 0;
+      height: 36px;
+      background: #c8860a;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .ticker {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: ticker 22s linear infinite;
+    }
+    .ticker span {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+      padding: 0 40px;
+      text-transform: uppercase;
+    }
+    .ticker span::after {
+      content: '★';
+      margin-left: 40px;
+      color: rgba(255,255,255,0.5);
+    }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+<div class="billboard">
+  <div class="bg-img"></div>
+  <div class="accent-left"></div>
+  <div class="accent-top"></div>
+
+  <div class="content">
+
+    <!-- LEFT -->
+    <div class="left">
+      <div>
+        <div class="logo-wrap">
+          <img src="/logo.png" alt="Shri Chamunda Solutions Inc." />
+        </div>
+        <div class="main-headline">
+          Expert<br>Carpentry
+          <span>& Handyman</span>
+        </div>
+        <div class="tagline">Your Home. Our Priority. 🍁</div>
+        <div class="badges">
+          <span class="badge">✅ Quality Work</span>
+          <span class="badge">🤝 Reliable</span>
+          <span class="badge">💰 Affordable</span>
+          <span class="badge">⏰ On-Time</span>
+        </div>
+      </div>
+      <div class="cta-block">
+        <p>📞 Call or WhatsApp for a Free Quote</p>
+        <div class="phone">(705) 542-6023</div>
+        <div class="website">🌐 shrichamundasolutions.ca</div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <div class="section-title">Our Services</div>
+      <div class="services-grid">
+        <div class="service-item"><span class="icon">🚪</span><span>Door Replacement & Installation</span></div>
+        <div class="service-item"><span class="icon">🍳</span><span>Kitchen Cabinet Repairs</span></div>
+        <div class="service-item"><span class="icon">🔐</span><span>Door Lock Installation</span></div>
+        <div class="service-item"><span class="icon">🌿</span><span>Fence Installation</span></div>
+        <div class="service-item"><span class="icon">🪑</span><span>Furniture Assembly</span></div>
+        <div class="service-item"><span class="icon">🗄️</span><span>Garage & Closet Shelving</span></div>
+        <div class="service-item"><span class="icon">🪵</span><span>General Woodwork & Repairs</span></div>
+        <div class="service-item"><span class="icon">🔨</span><span>Any Wood Related Work</span></div>
+      </div>
+      <div class="custom-strip">
+        <div>
+          <h4>🛠️ Custom Wooden Furniture</h4>
+          <p>Beds · Coffee Tables · Kitchen Cabinets · Shelves · Fences</p>
+          <div class="custom-tags">
+            <span class="custom-tag">Custom Designs</span>
+            <span class="custom-tag">Strong & Durable</span>
+            <span class="custom-tag">High Quality Finish</span>
+          </div>
+        </div>
+        <div class="idea-box">
+          Your Idea
+          <span class="arrow">↓</span>
+          We Build It!
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>Door Replacement</span>
+      <span>Kitchen Cabinet Repairs</span>
+      <span>Fence Installation</span>
+      <span>Furniture Assembly</span>
+      <span>Custom Wooden Furniture</span>
+      <span>Garage & Closet Shelving</span>
+      <span>General Woodwork</span>
+      <span>Door Lock Installation</span>
+      <span>Call (705) 542-6023</span>
+      <span>shrichamundasolutions.ca</span>
+      <!-- duplicate for seamless loop -->
+      <span>Door Replacement</span>
+      <span>Kitchen Cabinet Repairs</span>
+      <span>Fence Installation</span>
+      <span>Furniture Assembly</span>
+      <span>Custom Wooden Furniture</span>
+      <span>Garage & Closet Shelving</span>
+      <span>General Woodwork</span>
+      <span>Door Lock Installation</span>
+      <span>Call (705) 542-6023</span>
+      <span>shrichamundasolutions.ca</span>
+    </div>
+  </div>
+
+  <div class="accent-bottom"></div>
+</div>
+</body>
+</html>
