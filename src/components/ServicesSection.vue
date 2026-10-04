@@ -62,7 +62,7 @@ const services = [
   { icon: '🪜', label: 'Drawer Channel Replacement' },
   { icon: '🚪', label: 'Closet Door Replacement' },
   { icon: '🔐', label: 'Door Lock Installation' },
-  { icon: '<img src="/fence.png" class="icon-img" />', label: 'Fence Installation' },
+  { icon: '<img src="/fence.png" class="icon-img" />', label: 'Fence Installation', width:'100%' },
   { icon: '🪑', label: 'Furniture Assembly' },
   { icon: '🗄️', label: 'Garage & Closet Shelving' },
   { icon: '🪵', label: 'General Woodwork & Repairs' },
@@ -158,7 +158,7 @@ h2 {
   background: rgba(200,134,10,0.1);
 }
 .check { font-size: 1.8rem; flex-shrink: 0; display: flex; align-items: center; width: 1.8rem; height: 1.8rem; }
-.icon-img { width: 29px; height: 29px; object-fit: contain; display: block; }
+.icon-img { width: 100%; height: 29px; object-fit: contain; display: block; }
 .service-card p {
   font-family: 'Open Sans', sans-serif;
   color: #e8d8c0;
