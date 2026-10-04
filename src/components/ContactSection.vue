@@ -9,6 +9,13 @@
             Ready to start your carpentry project? Reach out for a free consultation or quote — we'd love to help.
           </p>
           <div class="info-item">
+            <span>📧</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:scsolutionsinc@outlook.com">scsolutionsinc@outlook.com</a>
+            </div>
+          </div>
+          <div class="info-item">
             <span>📞</span>
             <div>
               <strong>Phone</strong>
