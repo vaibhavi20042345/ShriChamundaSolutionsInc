@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shri Chamunda Solutions Inc. — Advertisement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #1a0e05;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .ad {
+      width: 100%;
+      max-width: 700px;
+      background: linear-gradient(160deg, #3b2a1a 0%, #1e0f05 100%);
+      border: 2px solid #c8860a;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    /* Header */
+    .ad-header {
+      background: linear-gradient(135deg, #c8860a, #a86e08);
+      padding: 1.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .ad-header img {
+      height: 70px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 6px 14px;
+    }
+    .ad-header-text { text-align: right; }
+    .ad-header-text h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .ad-header-text p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.85);
+      margin-top: 0.3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* Hero text */
+    .ad-hero {
+      padding: 2rem 2rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(200,134,10,0.25);
+    }
+    .ad-hero h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .ad-hero h2 span { color: #c8860a; }
+    .ad-hero p {
+      font-size: 0.95rem;
+      color: #c8b090;
+      margin-bottom: 1rem;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .badge {
+      background: rgba(200,134,10,0.15);
+      border: 1px solid rgba(200,134,10,0.4);
+      color: #e8c87a;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+    }
+
+    /* Services */
+    .ad-services { padding: 1.5rem 2rem; }
+    .ad-services h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 1rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(200,134,10,0.15);
+      border-radius: 8px;
+      padding: 0.6rem 0.9rem;
+    }
+    .service-item span { font-size: 1.2rem; }
+    .service-item p {
+      font-family: 'Open Sans', sans-serif;
+      color: #e8d8c0;
+      font-size: 0.82rem;
+      line-height: 1.3;
+    }
+
+    /* Custom furniture strip */
+    .ad-custom {
+      margin: 0 2rem 1.5rem;
+      background: rgba(200,134,10,0.12);
+      border: 1px solid rgba(200,134,10,0.35);
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .ad-custom-left h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: #c8860a;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .ad-custom-left p {
+      font-family: 'Open Sans', sans-serif;
+      color: #c8b090;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    .custom-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+    .custom-tag {
+      background: #c8860a;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.7rem;
+      border-radius: 50px;
+    }
+    .idea-pill {
+      background: #c8860a;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 0.8rem 1.4rem;
+      border-radius: 10px;
+      text-align: center;
+      white-space: nowrap;
+      line-height: 1.6;
+    }
+
+    /* CTA Footer */
+    .ad-cta {
+      background: linear-gradient(135deg, #c8860a, #a86e08);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .ad-cta-text h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .ad-cta-text p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.85);
+      margin-top: 0.2rem;
+    }
+    .ad-cta-contacts { display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-end; }
+    .ad-cta-contacts a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(0,0,0,0.2);
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+    }
+    .ad-cta-contacts a:hover { background: rgba(0,0,0,0.35); }
+
+    @media (max-width: 500px) {
+      .ad-header { flex-direction: column; text-align: center; }
+      .ad-header-text { text-align: center; }
+      .services-grid { grid-template-columns: 1fr; }
+      .ad-cta { flex-direction: column; text-align: center; }
+      .ad-cta-contacts { align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ad">
+
+    <!-- Header -->
+    <div class="ad-header">
+      <img src="/logo.png" alt="Shri Chamunda Solutions Inc." />
+      <div class="ad-header-text">
+        <h1>Shri Chamunda<br>Solutions Inc.</h1>
+        <p>Creating Better Solutions, Building Stronger Futures.</p>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="ad-hero">
+      <h2>Handyman & <span>Woodwork Services</span></h2>
+      <p>Your Home. Our Priority. — Proudly serving Canada 🍁</p>
+      <div class="badges">
+        <span class="badge">✅ Quality Work</span>
+        <span class="badge">🤝 Reliable</span>
+        <span class="badge">💰 Affordable</span>
+        <span class="badge">⏰ On-Time</span>
+        <span class="badge">💪 Small Repairs. Big Difference.</span>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="ad-services">
+      <h3>Our Services</h3>
+      <div class="services-grid">
+        <div class="service-item"><span>🚪</span><p>Door Replacement & Installation</p></div>
+        <div class="service-item"><span>🍳</span><p>Kitchen Cabinet Maintenance & Repairs</p></div>
+        <div class="service-item"><span>🪜</span><p>Drawer Channel Replacement</p></div>
+        <div class="service-item"><span>🔐</span><p>Door Lock Installation</p></div>
+        <div class="service-item"><span>🌿</span><p>Fence Installation</p></div>
+        <div class="service-item"><span>🪑</span><p>Furniture Assembly</p></div>
+        <div class="service-item"><span>🗄️</span><p>Garage & Closet Shelving</p></div>
+        <div class="service-item"><span>🪵</span><p>General Woodwork & Repairs</p></div>
+        <div class="service-item"><span>🚪</span><p>Closet Door Replacement</p></div>
+        <div class="service-item"><span>🔨</span><p>Any Other Wood Related Work</p></div>
+      </div>
+    </div>
+
+    <!-- Custom Furniture -->
+    <div class="ad-custom">
+      <div class="ad-custom-left">
+        <h4>🛠️ Custom Wooden Furniture</h4>
+        <p>Custom beds, coffee tables, kitchen cabinets, shelves & more — built to your space & requirements.</p>
+        <div class="custom-items">
+          <span class="custom-tag">Custom Designs</span>
+          <span class="custom-tag">Strong & Durable</span>
+          <span class="custom-tag">High Quality Finish</span>
+        </div>
+      </div>
+      <div class="idea-pill">Your Idea<br>→<br>We Build It!</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="ad-cta">
+      <div class="ad-cta-text">
+        <h4>📞 Call or WhatsApp for a Free Quote!</h4>
+        <p>Discuss your project — we're ready to help.</p>
+      </div>
+      <div class="ad-cta-contacts">
+        <a href="tel:7055426023">📱 (705) 542-6023</a>
+        <a href="https://shrichamundasolutions.ca">🌐 shrichamundasolutions.ca</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
