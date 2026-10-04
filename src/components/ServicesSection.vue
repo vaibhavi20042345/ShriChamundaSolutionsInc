@@ -157,7 +157,7 @@ h2 {
   border-color: #c8860a;
   background: rgba(200,134,10,0.1);
 }
-.check { font-size: 1.8rem; flex-shrink: 0; }
+.check { font-size: 1.8rem; flex-shrink: 0; display: flex; align-items: center; }
 .icon-img { width: 1.8rem; height: 1.8rem; object-fit: contain; }
 .service-card p {
   font-family: 'Open Sans', sans-serif;
