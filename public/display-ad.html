@@ -43,10 +43,18 @@
       background: linear-gradient(180deg, #c8860a, #f0b429, #c8860a);
     }
 
+    /* Gold accent bar - right side */
+    .accent-right {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 10px;
+      background: linear-gradient(180deg, #c8860a, #f0b429, #c8860a);
+    }
+
     /* Gold accent bar - top */
     .accent-top {
       position: absolute;
-      top: 0; left: 10px; right: 0;
+      top: 0; left: 10px; right: 10px;
       height: 6px;
       background: linear-gradient(90deg, #c8860a, #f0b429, #c8860a);
     }
@@ -54,7 +62,7 @@
     /* Gold accent bar - bottom */
     .accent-bottom {
       position: absolute;
-      bottom: 0; left: 10px; right: 0;
+      bottom: 0; left: 10px; right: 10px;
       height: 6px;
       background: linear-gradient(90deg, #c8860a, #f0b429, #c8860a);
     }
@@ -62,7 +70,7 @@
     /* Main layout */
     .content {
       position: absolute;
-      inset: 6px 0 6px 10px;
+      inset: 6px 10px 6px 10px;
       display: grid;
       grid-template-columns: 1fr 1.1fr;
       gap: 0;
@@ -175,8 +183,8 @@
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 20px;
+      gap: 6px;
+      margin-bottom: 14px;
     }
     .service-item {
       display: flex;
@@ -258,7 +266,7 @@
     .ticker-wrap {
       position: absolute;
       bottom: 6px;
-      left: 10px; right: 0;
+      left: 10px; right: 10px;
       height: 36px;
       background: #c8860a;
       overflow: hidden;
@@ -294,6 +302,7 @@
 <div class="billboard">
   <div class="bg-img"></div>
   <div class="accent-left"></div>
+  <div class="accent-right"></div>
   <div class="accent-top"></div>
 
   <div class="content">
@@ -305,9 +314,9 @@
           <img src="/logo.png" alt="Shri Chamunda Solutions Inc." />
         </div>
         <div class="main-headline">
-          Expert<br>Carpentry
-          <span>& Handyman</span>
+          Shri Chamunda<br><span>Solutions</span>
         </div>
+        <div style="font-size:15px;font-weight:700;color:#c8b090;margin-bottom:10px;letter-spacing:1px;">Expert Carpentry & Handyman Services</div>
         <div class="tagline">Your Home. Our Priority. 🍁</div>
         <div class="badges">
           <span class="badge">✅ Quality Work</span>
@@ -335,6 +344,7 @@
         <div class="service-item"><span class="icon">🗄️</span><span>Garage & Closet Shelving</span></div>
         <div class="service-item"><span class="icon">🪵</span><span>General Woodwork & Repairs</span></div>
         <div class="service-item"><span class="icon">🔨</span><span>Any Wood Related Work</span></div>
+        <div class="service-item"><span class="icon">🏚️</span><span>Basement Renovation</span></div>
       </div>
       <div class="custom-strip">
         <div>
@@ -363,6 +373,7 @@
       <span>Kitchen Cabinet Repairs</span>
       <span>Fence Installation</span>
       <span>Furniture Assembly</span>
+      <span>Basement Renovation</span>
       <span>Custom Wooden Furniture</span>
       <span>Garage & Closet Shelving</span>
       <span>General Woodwork</span>
@@ -374,6 +385,7 @@
       <span>Kitchen Cabinet Repairs</span>
       <span>Fence Installation</span>
       <span>Furniture Assembly</span>
+      <span>Basement Renovation</span>
       <span>Custom Wooden Furniture</span>
       <span>Garage & Closet Shelving</span>
       <span>General Woodwork</span>
