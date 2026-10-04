@@ -158,7 +158,7 @@ h2 {
   background: rgba(200,134,10,0.1);
 }
 .check { font-size: 1.8rem; flex-shrink: 0; }
-.icon-img { width: 1.8rem; height: 1.8rem; object-fit: contain; filter: invert(1); }
+.icon-img { width: 1.8rem; height: 1.8rem; object-fit: contain; }
 .service-card p {
   font-family: 'Open Sans', sans-serif;
   color: #e8d8c0;
