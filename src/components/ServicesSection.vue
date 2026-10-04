@@ -15,7 +15,7 @@
       <div class="block-title">Our Services</div>
       <div class="services-grid">
         <div class="service-card" v-for="s in services" :key="s.label">
-          <span class="check">{{ s.icon }}</span>
+          <span class="check" v-html="s.icon"></span>
           <p>{{ s.label }}</p>
         </div>
       </div>
@@ -62,7 +62,7 @@ const services = [
   { icon: '🪜', label: 'Drawer Channel Replacement' },
   { icon: '🚪', label: 'Closet Door Replacement' },
   { icon: '🔐', label: 'Door Lock Installation' },
-  { icon: '🪚', label: 'Fence Installation' },
+  { icon: '<img src="/fence.png" class="icon-img" />', label: 'Fence Installation' },
   { icon: '🪑', label: 'Furniture Assembly' },
   { icon: '🗄️', label: 'Garage & Closet Shelving' },
   { icon: '🪵', label: 'General Woodwork & Repairs' },
@@ -76,7 +76,7 @@ const customItems = [
   { icon: '☕', label: 'Coffee Tables' },
   { icon: '🍳', label: 'Kitchen Cabinets' },
   { icon: '🚪', label: 'Closet Shelves' },
-  { icon: '🪚', label: 'Fence Installation' },
+  { icon: '<img src="/fence.png" class="icon-img" />', label: 'Fence Installation' },
 ]
 </script>
 
@@ -158,6 +158,7 @@ h2 {
   background: rgba(200,134,10,0.1);
 }
 .check { font-size: 1.8rem; flex-shrink: 0; }
+.icon-img { width: 1.8rem; height: 1.8rem; object-fit: contain; filter: invert(1); }
 .service-card p {
   font-family: 'Open Sans', sans-serif;
   color: #e8d8c0;
