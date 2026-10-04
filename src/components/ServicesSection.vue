@@ -15,7 +15,10 @@
       <div class="block-title">Our Services</div>
       <div class="services-grid">
         <div class="service-card" v-for="s in services" :key="s.label">
-          <span class="check" v-html="s.icon"></span>
+          <span class="check">
+            <img v-if="s.isImg" :src="s.icon" class="icon-img" />
+            <template v-else>{{ s.icon }}</template>
+          </span>
           <p>{{ s.label }}</p>
         </div>
       </div>
@@ -30,7 +33,8 @@
           </div>
           <div class="custom-items">
             <div v-for="item in customItems" :key="item.label" class="custom-item">
-              <span>{{ item.icon }}</span>
+              <img v-if="item.isImg" :src="item.icon" class="custom-icon-img" />
+              <span v-else>{{ item.icon }}</span>
               <strong>{{ item.label }}</strong>
             </div>
           </div>
@@ -62,7 +66,7 @@ const services = [
   { icon: '🪜', label: 'Drawer Channel Replacement' },
   { icon: '🚪', label: 'Closet Door Replacement' },
   { icon: '🔐', label: 'Door Lock Installation' },
-  { icon: '<img src="/fence.png" class="icon-img" />', label: 'Fence Installation', width:'100%' },
+  { icon: '/fence.png', isImg: true, label: 'Fence Installation' },
   { icon: '🪑', label: 'Furniture Assembly' },
   { icon: '🗄️', label: 'Garage & Closet Shelving' },
   { icon: '🪵', label: 'General Woodwork & Repairs' },
@@ -76,7 +80,7 @@ const customItems = [
   { icon: '☕', label: 'Coffee Tables' },
   { icon: '🍳', label: 'Kitchen Cabinets' },
   { icon: '🚪', label: 'Closet Shelves' },
-  { icon: '<img src="/fence.png" class="icon-img" />', label: 'Fence Installation' },
+  { icon: '/fence.png', isImg: true, label: 'Fence Installation' },
 ]
 </script>
 
@@ -157,8 +161,9 @@ h2 {
   border-color: #c8860a;
   background: rgba(200,134,10,0.1);
 }
-.check { font-size: 1.8rem; flex-shrink: 0; display: flex; align-items: center; width: 1.8rem; height: 1.8rem; }
-.icon-img { width: 100%; height: 29px; object-fit: contain; display: block; }
+.check { font-size: 1.8rem; flex-shrink: 0; display: flex; align-items: center; }
+.icon-img { width: 29px; height: 29px; object-fit: contain; }
+.custom-icon-img { width: 1.2rem; height: 1.2rem; object-fit: contain; }
 .service-card p {
   font-family: 'Open Sans', sans-serif;
   color: #e8d8c0;
