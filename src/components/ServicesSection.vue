@@ -62,7 +62,7 @@ const services = [
   { icon: '🪜', label: 'Drawer Channel Replacement' },
   { icon: '🚪', label: 'Closet Door Replacement' },
   { icon: '🔐', label: 'Door Lock Installation' },
-  { icon: '🌿', label: 'Fence Installation' },
+  { icon: '🪚', label: 'Fence Installation' },
   { icon: '🪑', label: 'Furniture Assembly' },
   { icon: '🗄️', label: 'Garage & Closet Shelving' },
   { icon: '🪵', label: 'General Woodwork & Repairs' },
@@ -76,7 +76,7 @@ const customItems = [
   { icon: '☕', label: 'Coffee Tables' },
   { icon: '🍳', label: 'Kitchen Cabinets' },
   { icon: '🚪', label: 'Closet Shelves' },
-  { icon: '🌿', label: 'Fence Installation' },
+  { icon: '🪚', label: 'Fence Installation' },
 ]
 </script>
 
