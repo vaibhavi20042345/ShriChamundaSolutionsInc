@@ -44,6 +44,7 @@
             </div>
           </div>
         </div>
+        <!-- FORM TEMPORARILY DISABLED
         <form class="contact-form" @submit.prevent="handleSubmit">
           <div class="form-group">
             <input type="text" placeholder="Your Name" v-model="form.name" required />
@@ -60,6 +61,7 @@
           <button type="submit" class="btn-submit">Send Message</button>
           <p v-if="sent" class="success-msg">✅ Thank you! We'll get back to you soon.</p>
         </form>
+        -->
       </div>
     </div>
   </section>
